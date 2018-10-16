@@ -1,0 +1,81 @@
+#make_bricks 
+def make_bricks(small, big, goal):
+  return goal%5 >= 0 and goal%5 - small <= 0 and small + 5*big >= goal
+
+#lone_sum 
+def lone_sum(a, b, c):
+  if a == b == c:
+    return 0
+  if b == c:
+    return a
+  if a == c:
+    return b
+  if a == b:
+    return c  
+  return a + b + c
+
+
+#lucky_sum
+def lucky_sum(a, b, c):
+  if a == 13:
+    return 0
+  if b == 13:
+    return a
+  if c == 13:
+    return a + b
+  return a + b + c
+
+#no_teen_sum 
+def no_teen_sum(a, b, c):
+  if a in [13, 14, 17, 18, 19]:
+    a= 0
+  
+  if b in [13, 14, 17, 18, 19]:
+    b= 0
+
+  if c in [13, 14, 17, 18, 19]:
+    c= 0
+ 
+  return a+b+c
+    
+  
+#round_sum 
+def round_sum(a, b, c):
+  if a % 10 >= 5:
+    a= a + 10 - (a % 10)
+  else :
+    a= a - (a % 10)
+    
+  if b % 10 >= 5:
+    b= b + 10 - (b % 10)
+  else :
+    b= b - (b % 10)
+    
+  if c % 10 >= 5:
+    c= c + 10 - (c % 10)
+  else :
+    c= c - (c % 10)
+  
+  return a+c+b
+
+
+#close_far
+def close_far(a, b, c):
+  ab = abs(a - b)
+  ac = abs(a - c)
+  bc = abs(b - c)
+  return (ab <= 1 and ac >= 2 and bc >= 2) !=(ac <= 1 and ab >= 2 and bc >= 2)
+    
+
+#make_chocolate 
+def make_chocolate(small, big, goal):
+  mx = goal / 5
+  if big >= mx:
+    if small >= (goal - mx * 5):
+      return goal - mx * 5
+  if big < mx:
+    if small >= (goal - big * 5):
+      return goal - big * 5
+  return -1
+
+#The_End
