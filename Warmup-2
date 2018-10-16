@@ -1,0 +1,82 @@
+#string_times
+def string_times(str, n):
+  s=""
+  for i in range (n):
+    s=s+str
+  return s
+  
+  
+#front_times
+def front_times(str, n):
+  r=""
+  if len(str)>3:
+    r=str[:3]
+  else:
+    r=str
+  t=""
+  for i in range (n):
+    t+=r
+  if n>0:
+    return t
+  else :
+    return ""
+    
+   
+#string_bits
+def string_bits(str):
+  t=""
+  for i in range (0,len(str),2):
+    t+=str[i]
+  return t
+
+#string_splosion
+def string_splosion(str):
+  t=""
+  for i in range(len(str)+1):
+    t=t+str[:i]
+  return t
+
+
+#last2
+def last2(str):
+  if len(str) < 2:
+    return 0
+  last2 = str[len(str)-2:]
+  count = 0
+  for i in range(len(str)-2):
+    sub = str[i:i+2]
+    if sub == last2:
+      count = count + 1
+  return count
+
+#array_count9
+def array_count9(nums):
+  return nums.count(9)
+
+#array_front9 
+def array_front9(nums):
+  try:
+    return (True if nums.index(9)<4 else False )
+  except:
+    return False
+
+#array123 
+def array123(nums):
+  try :
+    return (True if nums.index(1)>=0 and nums.index(2)>=0 and nums.index(3)>=0 else False)
+  except:
+    return False
+ 
+ 
+#string_match 
+def string_match(a, b):
+  shorter = min(len(a), len(b))
+  count = 0
+  for i in range(shorter-1):
+    s = a[i:i+2]
+    c = b[i:i+2]
+    if s == c:
+      count = count + 1
+  return count
+
+#The_End
